@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlLang">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Generator</title>
+    <link rel="stylesheet" href="QR-Code/style.css" />
+    <script src="QR-Code/script.js"></script>
+    <style>
+      #qrBox {
+        display: none; /* إخفاء الصندوق افتراضيًا */
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><img src="image/logo.jpg" alt="Logo" /></li>
+        <li>
+          <select id="languageSelector" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="ar">العربية</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
+    <div class="container">
+      <p id="labelText">Enter your text or URL</p>
+      <input type="text" placeholder="Text or URL" id="qrText" required />
+      <div id="qrBox">
+        <img src="" id="qrImage" />
+        <button
+          class="downloadButton"
+          onclick="downloadQRCode()"
+          id="downloadButton"
+        >
+          Download
+        </button>
+      </div>
+      <button onclick="GenerateQRCode()" id="generateButton">
+        Generate QR Code
+      </button>
+    </div>
+  </body>
+</html>
